@@ -1,0 +1,88 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+ 	   	 <a class="navbar-brand" href="/index">Department Management System</a>
+ 		 
+ 		 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		 </button>
+
+  		 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    		<ul class="navbar-nav ml-auto">
+     				
+     				
+     				<li class="nav-item">
+            				<a class="nav-link" href="${pageContext.request.contextPath}/dashboard"><button type="button" class="btn btn-outline-primary">Home</button></a>
+      				 </li>
+     				
+     				<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><button type="button" class="btn btn-outline-info">Attendance Services</button></a>
+    						<div class="dropdown-menu">
+      							<a class="dropdown-item" href="/admin/attendance/update">Update Attendance</a>
+      							<a class="dropdown-item" href="/admin/attendance/selectAttendance">View Attendance</a>
+      						</div>
+  					</li>
+     				
+     				
+     				
+     				<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><button type="button" class="btn btn-outline-info">Course Services</button></a>
+    						<div class="dropdown-menu">
+      							<a class="dropdown-item" href="/admin/course/add">Add Course</a>
+      							<a class="dropdown-item" href="/admin/course/view">View Courses</a>
+      						</div>
+  					</li>
+  					
+  					<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><button type="button" class="btn btn-outline-info">Mapping Services</button></a>
+    						<div class="dropdown-menu">
+      							<a class="dropdown-item" href="/admin/mapping/add">Map Faculty To Course</a>
+      							<a class="dropdown-item" href="/admin/mapping/view">View Mappings</a>
+      						</div>
+  					</li>
+     				
+     	
+  					
+  					<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><button type="button" class="btn btn-outline-info">Faculty Services</button></a>
+    						<div class="dropdown-menu">
+      							<a class="dropdown-item" href="/admin/faculty/add">Add Faculty</a>
+      							<a class="dropdown-item" href="/admin/faculty/view">View Faculties</a>
+      						</div>
+  					</li>
+     				
+      				<li class="nav-item dropdown">
+    					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><button type="button" class="btn btn-outline-info">Student Services</button></a>
+    						<div class="dropdown-menu">
+      							<a class="dropdown-item" href="/admin/student/add">Add Student</a>
+      							<a class="dropdown-item" href="/admin/student/select">View Students</a>
+      						</div>
+  					</li>
+      
+      
+                     <li class="nav-item">
+            				
+            				<c:url value="/logout" var="logoutUrl" />
+								<form id="logout" action="${logoutUrl}" method="post" >
+  									<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+								</form>
+							<c:if test="${pageContext.request.userPrincipal.name != null}">
+									<a class="nav-link" href="javascript:document.getElementById('logout').submit()"><button type="button" class="btn btn-outline-warning">Logout</button></a>
+							</c:if>		
+            				
+            				
+            		 </li>
+      				 
+      				  
+      		 </ul>
+  		
+  		</div>
+	
+	</nav>
+  		
+  		
+  		
+  		
+  		
+         
+	
